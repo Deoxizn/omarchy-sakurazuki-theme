@@ -5,7 +5,7 @@ Dark low-contrast Omarchy theme built around a sakura wallpaper.
 ## Installation
 
 ```bash
-omarchy-theme-install https://github.com/ahmed-z0/omarchy-sakurazuki-theme.git
+omarchy-theme-install https://github.com/Deoxizn/omarchy-sakurazuki-theme.git
 ```
 
 - Wallpaper: `backgrounds/sakura.png`
