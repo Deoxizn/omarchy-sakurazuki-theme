@@ -4,3 +4,9 @@
 @define-color border #5B4E62;
 @define-color foreground #D8D0DC;
 @define-color background #14111A;
+@define-color accent #E7DFE9;
+
+child:selected {
+  background: alpha(@accent, 0.2);
+  border-radius: 8px;
+}
