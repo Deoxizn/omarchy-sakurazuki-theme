@@ -1,38 +1,50 @@
 return {
     {
         "bjarneo/aether.nvim",
+        branch = "v3",
         name = "aether",
         priority = 1000,
         opts = {
-            disable_italics = false,
             colors = {
-                -- Monotone shades (base00-base07)
-                base00 = "#14111A", -- Default background
-                base01 = "#43384C", -- Lighter background (status bars)
-                base02 = "#14111A", -- Selection background
-                base03 = "#43384C", -- Comments, invisibles
-                base04 = "#E7DFE9", -- Dark foreground
-                base05 = "#D8D0DC", -- Default foreground
-                base06 = "#D8D0DC", -- Light foreground
-                base07 = "#E7DFE9", -- Light background
+                bg = "#14111A",
+                dark_bg = "#100D16",
+                darker_bg = "#0B0911",
+                lighter_bg = "#43384C",
 
-                -- Accent colors (base08-base0F)
-                base08 = "#8D5F74", -- Variables, errors, red
-                base09 = "#B57A92", -- Integers, constants, orange
-                base0A = "#9A84A2", -- Classes, types, yellow
-                base0B = "#6F7B8F", -- Strings, green
-                base0C = "#7E95C1", -- Support, regex, cyan
-                base0D = "#A87692", -- Functions, keywords, blue
-                base0E = "#947598", -- Keywords, storage, magenta
-                base0F = "#BEA2C7", -- Deprecated, brown/yellow
+                fg = "#D8D0DC",
+                dark_fg = "#6B5E72",
+                light_fg = "#E7DFE9",
+                bright_fg = "#E7DFE9",
+                muted = "#6B5E72",
+
+                red = "#8D5F74",
+                yellow = "#9A84A2",
+                orange = "#B57A92",
+                green = "#6F7B8F",
+                cyan = "#7E95C1",
+                blue = "#A87692",
+                magenta = "#947598",
+                brown = "#BEA2C7",
+
+                bright_red = "#B57A92",
+                bright_yellow = "#BEA2C7",
+                bright_green = "#8791AE",
+                bright_cyan = "#94ABD1",
+                bright_blue = "#C994B3",
+                bright_magenta = "#C3A5CA",
+
+                accent = "#B6849D",
+                cursor = "#E7DFE9",
+                foreground = "#D8D0DC",
+                background = "#14111A",
+                selection = "#2A2432",
+                selection_foreground = "#D8D0DC",
+                selection_background = "#2A2432",
             },
         },
         config = function(_, opts)
             require("aether").setup(opts)
             vim.cmd.colorscheme("aether")
-
-            -- Enable hot reload
-            require("aether.hotreload").setup()
         end,
     },
     {

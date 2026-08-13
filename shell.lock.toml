@@ -1,0 +1,7 @@
+text             = "#E8E2EE"
+placeholder      = "#B29AAA"
+text-error       = "#B57A92"
+border           = "#B6849D"
+border-active    = "#94ABD1"
+border-error     = "#B57A92"
+selection        = "#94ABD1"
