@@ -22,13 +22,12 @@ omarchy-theme-install https://github.com/ahmed-z0/omarchy-sakurazuki-theme.git
 
 ## What's Included
 
-- Native Omarchy 4 / Quattro support through the semantic `colors.toml` palette, handcrafted `shell.toml` surfaces, and Lua-based Hyprland treatment in `hyprland.lua` + `hyprland.conf`.
+- Native Omarchy 4 / Quattro support through the semantic `colors.toml` palette and handcrafted `shell.toml` surfaces. Hyprland borders and Neovim are generated from `colors.toml` (`hyprland_active_border` → `hyprland.lua`, `aether.nvim` via `neovim.lua.tpl`).
 - `backgrounds/sakura.png` — wallpaper (with `preview.png`, `preview-unlock.png`, `unlock.png` for the theme switcher)
-- Standalone Neovim colorscheme plugin with `colors/sakurazuki.lua` and the `lua/sakurazuki/` module tree, so `:colorscheme sakurazuki` works directly from the active Omarchy theme directory (plus `neovim.lua` wiring for `aether.nvim` v3 via LazyVim)
 - Companion theme files for Vencord (`vencord.theme.css`), Warp (`warp.yaml`), Chromium (`chromium.theme`), and Zed (`sakurazuki.zed.json`)
 - Handcrafted overrides for `gtk.css`, `walker.css`, `waybar.css`, `swayosd.css`, `mako.ini`, `colors.css`, `cava`, `foot.ini`, and `sakurazuki.override.css` (Aether/GUI)
-- Quattro generates routine application themes from `colors.toml`; generated boilerplate is kept minimal where custom styling is not needed
-- `icons.theme` (Yaru-magenta) and `alacritty.toml` / `kitty.conf` / `ghostty.conf` / `foot.ini` terminal palettes (regenerated on install from `colors.toml` when installed as a git theme)
+- Quattro generates `hyprland.lua`, `neovim.lua`, and terminal configs (`alacritty.toml`/`kitty.conf`/`ghostty.conf`/`foot.ini`/`vscode.json`) from `colors.toml` when the theme is installed from a git repo (those files are not shipped; see `INSTALLED_THEME_DENIED` in `omarchy-theme-set`)
+- `icons.theme` (Yaru-magenta)
 
 ## Palette
 
@@ -51,9 +50,9 @@ Near-black plum base, muted rose accents, moonlit blue highlights.
 
 ## Notes
 
-- `neovim.lua` is wired to Omarchy's active theme directory when using the `sakurazuki` custom colorscheme; the bundled `aether.nvim` config also works via the generated theme.
+- `colors.toml` is the single source of truth — `hyprland.lua` (borders), `neovim.lua` (aether.nvim v3), and terminal configs are generated from it when installed via `omarchy-theme-install`. No `*.lua`, `alacritty.toml`, `foot.ini`, `ghostty.conf`, `kitty.conf`, or `vscode.json` is shipped, per `INSTALLED_THEME_DENIED` (Hyprland `require`s `hyprland.lua`/`gum_env.lua`, Neovim loads `neovim.lua`; those would run code).
 - `shell.toml` fully describes Quickshell surfaces (bar, popups, notifications, launcher, menu, polkit, lock, image-picker, controls, spacing, typography). `shell.lock.toml` is no longer needed — the `[lock]` section lives in `shell.toml`.
-- Hyprland borders are defined in both `hyprland.conf` (legacy) and `hyprland.lua` (current Lua config, required since Hyprland 0.5x+). The Lua version uses `{ colors = { "rgba(...)", ... }, angle = 45 }`.
+- Hyprland borders are defined in `colors.toml` as `hyprland_active_border = "rgba(b6849dee) rgba(a1809acc) 45deg"` etc and rendered via `default/themed/hyprland.lua.tpl` → `{ colors = { "rgba(...)", ... }, angle = 45 }`.
 
 ## Template
 
