@@ -22,12 +22,21 @@ omarchy-theme-install https://github.com/ahmed-z0/omarchy-sakurazuki-theme.git
 
 ## What's Included
 
-- Native Omarchy 4 / Quattro support through the semantic `colors.toml` palette and handcrafted `shell.toml` surfaces. Hyprland borders and Neovim are generated from `colors.toml` (`hyprland_active_border` → `hyprland.lua`, `aether.nvim` via `neovim.lua.tpl`).
-- `backgrounds/sakura.png` — wallpaper (with `preview.png`, `preview-unlock.png`, `unlock.png` for the theme switcher)
-- Companion theme files for Vencord (`vencord.theme.css`), Warp (`warp.yaml`), Chromium (`chromium.theme`), and Zed (`sakurazuki.zed.json`)
-- Handcrafted overrides for `gtk.css`, `walker.css`, `waybar.css`, `swayosd.css`, `mako.ini`, `colors.css`, `cava`, `foot.ini`, and `sakurazuki.override.css` (Aether/GUI)
-- Quattro generates `hyprland.lua`, `neovim.lua`, and terminal configs (`alacritty.toml`/`kitty.conf`/`ghostty.conf`/`foot.ini`/`vscode.json`) from `colors.toml` when the theme is installed from a git repo (those files are not shipped; see `INSTALLED_THEME_DENIED` in `omarchy-theme-set`)
-- `icons.theme` (Yaru-magenta)
+Built for Omarchy 4 (Quattro). `colors.toml` is the palette and does almost all the work: Omarchy renders Hyprland (`hyprland.lua`), Neovim, the Quickshell bar and lock screen, Alacritty, Foot, Ghostty, Kitty, btop, Chromium and VS Code from it through its own templates on install.
+
+A theme installed from a git repo deliberately cannot ship `*.lua`, a terminal config or `vscode.json` — those name programs that get launched, so Omarchy generates them from the palette instead. That is why they are not in here.
+
+That leaves:
+
+| File | Consumer |
+|------|----------|
+| `colors.toml` | everything above |
+| `shell.toml` | Quickshell bar, popups, notifications, launcher, menu, polkit, lock, image-picker (handcrafted, not generated) |
+| `backgrounds/` | `omarchy theme bg next`, background switcher |
+| `preview.png` / `preview-unlock.png` / `unlock.png` | theme switcher |
+| `icons.theme` | `omarchy-theme-set-gnome` |
+
+Quattro generates `hyprland.lua`, `neovim.lua`, and terminal configs from `colors.toml` when installed via `omarchy-theme-install` (see `INSTALLED_THEME_DENIED` in `omarchy-theme-set`).
 
 ## Palette
 
@@ -50,13 +59,13 @@ Near-black plum base, muted rose accents, moonlit blue highlights.
 
 ## Notes
 
-- `colors.toml` is the single source of truth — `hyprland.lua` (borders), `neovim.lua` (aether.nvim v3), and terminal configs are generated from it when installed via `omarchy-theme-install`. No `*.lua`, `alacritty.toml`, `foot.ini`, `ghostty.conf`, `kitty.conf`, or `vscode.json` is shipped, per `INSTALLED_THEME_DENIED` (Hyprland `require`s `hyprland.lua`/`gum_env.lua`, Neovim loads `neovim.lua`; those would run code).
+- `colors.toml` is the single source of truth — `hyprland.lua` (borders), `neovim.lua` (aether.nvim v3), and terminal configs are generated from it when installed via `omarchy-theme-install`. No `*.lua`, `alacritty.toml`, `foot.ini`, `ghostty.conf`, `kitty.conf`, or `vscode.json` is shipped, per `INSTALLED_THEME_DENIED`.
 - `shell.toml` fully describes Quickshell surfaces (bar, popups, notifications, launcher, menu, polkit, lock, image-picker, controls, spacing, typography). `shell.lock.toml` is no longer needed — the `[lock]` section lives in `shell.toml`.
-- Hyprland borders are defined in `colors.toml` as `hyprland_active_border = "rgba(b6849dee) rgba(a1809acc) 45deg"` etc and rendered via `default/themed/hyprland.lua.tpl` → `{ colors = { "rgba(...)", ... }, angle = 45 }`.
+- Hyprland borders are defined in `colors.toml` as `hyprland_active_border = "rgba(b6849dee) rgba(a1809acc) 45deg"` etc and rendered via `default/themed/hyprland.lua.tpl`.
 
 ## Template
 
-Structure templated from [OldJobobo/omarchy-dune-theme](https://github.com/OldJobobo/omarchy-dune-theme) to meet Omarchy's newest theme requirements (colors.toml + shell.toml + hyprland.lua, Quattro generation, denied-file handling).
+Structure templated from [OldJobobo/omarchy-dune-theme](https://github.com/OldJobobo/omarchy-dune-theme) but stripped to the strict minimal file list like newer themes (Tokyo-night, Dark Spiderman) — only `colors.toml`/`shell.toml` + assets, everything else generated.
 
 ## Preview
 
