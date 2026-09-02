@@ -1,0 +1,104 @@
+/*                                                                     */
+/*                                                                     */
+/* ,gggggggggggg,    ,ggg,         gg  ,ggg, ,ggggggg,     ,ggggggg,   */
+/* dP"""88""""""Y8b, dP""Y8a        88 dP""Y8,8P"""""Y8b  ,dP""""""Y8b */
+/* Yb,  88       `8b,Yb, `88        88 Yb, `8dP'     `88  d8'    a  Y8 */
+/*  `"  88        `8b `"  88        88  `"  88'       88  88     "Y8P' */
+/*      88         Y8     88        88      88        88  `8baaaa      */
+/*      88         d8     88        88      88        88 ,d8P""""      */
+/*      88        ,8P     88        88      88        88 d8"           */
+/*      88       ,8P'     88        88      88        88 Y8,           */
+/*      88______,dP'      Y8b,____,d88,     88        Y8,`Yba,,_____,  */
+/*     888888888P"         "Y888888P"Y8     88        `Y8  `"Y8888888  */
+/*                                                                     */
+/*                                                                     */
+/*                                                                     */
+/*                                                                     */
+
+/**
+ * Aether Theme with Sharp Corners (Hyprland-inspired)
+ * GTK4/Adwaita Custom Styling - Sakurazuki
+ */
+
+/* Dynamic color palette from Aether */
+@define-color background #14111a;
+@define-color foreground #d8d0dc;
+@define-color selection_bg #2a2432;
+@define-color selection_fg #d8d0dc;
+
+@define-color black #14111a;
+@define-color red #8d5f74;
+@define-color green #6f7b8f;
+@define-color yellow #9a84a2;
+@define-color blue #b6849d;
+@define-color magenta #947598;
+@define-color cyan #7e95c1;
+@define-color white #e7dfe9;
+@define-color bright_black #6b5e72;
+@define-color bright_red #b57a92;
+@define-color bright_green #8791ae;
+@define-color bright_yellow #bea2c7;
+@define-color bright_blue #c994b3;
+@define-color bright_magenta #c3a5ca;
+@define-color bright_cyan #94abd1;
+@define-color bright_white #d8d0dc;
+
+/* Adwaita Color Overrides */
+@define-color accent_bg_color @blue;
+@define-color accent_fg_color @background;
+@define-color accent_color @blue;
+
+@define-color window_bg_color @background;
+@define-color window_fg_color @foreground;
+
+/* Sidebar background and content */
+@define-color view_bg_color #1e1b27;
+@define-color view_fg_color @foreground;
+@define-color sidebar_bg_color #1e1b27;
+@define-color sidebar_fg_color @foreground;
+@define-color sidebar_backdrop_color #1e1b27;
+@define-color sidebar_shade_color #1e1b27;
+
+@define-color headerbar_bg_color #1e1b27;
+@define-color headerbar_fg_color @foreground;
+@define-color headerbar_backdrop_color #1e1b27;
+@define-color headerbar_shade_color #1e1b27;
+@define-color card_bg_color #1e1b27;
+@define-color card_fg_color @foreground;
+
+@define-color popover_bg_color #1e1b27;
+@define-color popover_fg_color @foreground;
+
+@define-color destructive_bg_color @red;
+@define-color destructive_fg_color @background;
+
+@define-color success_bg_color @green;
+@define-color success_fg_color @background;
+
+@define-color warning_bg_color @yellow;
+@define-color warning_fg_color @background;
+
+@define-color error_bg_color @red;
+@define-color error_fg_color @background;
+
+@define-color dialog_bg_color @background;
+@define-color dialog_fg_color @foreground;
+
+@define-color borders alpha(@foreground, 0.1);
+
+/* GTK3 Adwaita Legacy Color Variables */
+@define-color theme_fg_color @foreground;
+@define-color theme_text_color @foreground;
+@define-color theme_bg_color @background;
+@define-color theme_base_color #1e1b27;
+@define-color theme_selected_bg_color @selection_bg;
+@define-color theme_selected_fg_color @selection_fg;
+@define-color insensitive_bg_color @background;
+@define-color insensitive_fg_color @bright_green;
+@define-color insensitive_base_color @black;
+@define-color theme_unfocused_fg_color @foreground;
+@define-color theme_unfocused_text_color @foreground;
+@define-color theme_unfocused_bg_color @background;
+@define-color theme_unfocused_base_color @background;
+@define-color theme_unfocused_selected_bg_color @selection_bg;
+@define-color theme_unfocused_selected_fg_color @selection_fg;

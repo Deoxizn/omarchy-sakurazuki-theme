@@ -1,0 +1,30 @@
+/*
+   * Aether tokenized template for shared CSS color variables.
+   * Primary names: color0-color15 (matches colors.toml)
+*/
+
+  /* ANSI palette */
+  @define-color color0 #14111a;
+  @define-color color1 #8d5f74;
+  @define-color color2 #6f7b8f;
+  @define-color color3 #9a84a2;
+  @define-color color4 #b6849d;
+  @define-color color5 #947598;
+  @define-color color6 #7e95c1;
+  @define-color color7 #e7dfe9;
+  @define-color color8 #6b5e72;
+  @define-color color9 #b57a92;
+  @define-color color10 #8791ae;
+  @define-color color11 #bea2c7;
+  @define-color color12 #c994b3;
+  @define-color color13 #c3a5ca;
+  @define-color color14 #94abd1;
+  @define-color color15 #d8d0dc;
+
+  /* Optional semantic aliases */
+  @define-color background #14111a;
+  @define-color foreground #d8d0dc;
+  @define-color accent #b6849d;
+  @define-color selection_bg #2a2432;
+  @define-color selection_fg #d8d0dc;
+  @define-color cursor #d8d0dc;
